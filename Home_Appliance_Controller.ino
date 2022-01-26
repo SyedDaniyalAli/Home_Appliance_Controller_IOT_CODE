@@ -133,8 +133,10 @@ void loop() {
   unsigned long currentMillis = millis();
 
 
-// you can adjust the delay time from here~~~~~~~~~~~~~~~~~~~~~~~~
-  if (currentMillis - previousMillis > 0) {
+  // you can adjust the delay time from here~~~~~~~~~~~~~~~~~~~~~~~~
+  if (currentMillis - previousMillis > 2000) {
+
+    previousMillis = currentMillis;
 
     isDataUpdated = getDataFromFirebase();
     digitalWrite(fanActuator, !DEVICE1_STATE);
@@ -158,7 +160,6 @@ bool getDataFromFirebase() {
   Serial.print("Get a document... ");
 
   //  For Device 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
   if (Firebase.Firestore.getDocument(&fbdo, FIREBASE_PROJECT_ID, "", documentPath1.c_str()))
   {
 
