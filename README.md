@@ -1,6 +1,8 @@
 # Home Appliance Controller IOT CODE
 This is and IOT based project to control home appliance at a distance where internet is available.
 
+### Created by SDA
+
 Steps to Start a project:
 
 1: Connect a wire with 5V 2A charger
